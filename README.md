@@ -52,28 +52,46 @@ Porém como precisamos deles na periodicidade semanal nós podemos utilizar um S
 Dessa forma poderiamos utilizar o seguinte Script 
 
 ```
-#Definindo onde está o meu arquivo
+#O arquivo original
 folder="/BR-Football-Dataset.csv"
 
-# Define o caminho do diretório no HDFS onde os arquivos serão copiados
+# nome do diretório onde eu quero colocar
 hdfs_dir="/Brazilian_Football/Type/National/Copa_do_Brasil"
 
-nome_arquivo = "Semana_"
+#Definindo o padrão como Semana_Num
+nome_arquivo="Semana_"
 
-n_weeks = 20
+#Quantidade de vezes que irá repetir
+n_weeks=20
 
 # Loop de 1 a 20 para copiar e renomear os arquivos
-for i in $(seq 1 $max_semanas) 
+for i in $(seq 1 $n_weeks) 
 do
     # Define o nome do arquivo original
     dir_hdfs="/Brazilian_Football/Type/National/Copa_do_Brasil/$nome_arquivo$i"
 
+    #COMANDO hdfs para inserir os dados
+    hdfs dfs -put $folder $dir_hdfs
+
+    #print do sistema para monitoramento
     echo "Inserindo arquivo no diretorio de $dir_hdfs"
 
-    hdfs dfs -put $folder $dir_hdfs
-    
 done
 ```
+
+Mostrando a mensagem do CMD e também como ficará cada arquivo: 
+
+<img src='https://user-images.githubusercontent.com/64543476/235368172-35d96848-378a-4bf7-a9ac-352c7cbf56f8.png'></img>
+
+dentro do HUE para fácil visualização: 
+
+<img src='https://user-images.githubusercontent.com/64543476/235368233-7e679cfd-9db7-4a8a-b77d-56ae49c07741.png'></img>
+
+Então nós fazemos o mesmo Script para todos os campeonatos automático com a Semana para ter os resultados da rodada 
+
+3 - BackUps 
+
+4 - Ecossistema 
 
 
 
