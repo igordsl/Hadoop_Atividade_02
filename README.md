@@ -41,6 +41,42 @@ NACIONAL
 REGIONAL
 <img src='https://user-images.githubusercontent.com/64543476/235367303-9cdf335c-861e-42f3-ba00-78a97eb2a492.jpeg'></img>
 
+2.2 - Inserindo os dados necessários 
+Para inserir os dados csv que foram baixados na nossa máquina pessoal primeiro podemos utilizar o comando direto no cmd 
+
+```
+docker cp BR-Football-Dataset.csv namenode:/BR-Football-Dataset.csv 
+```
+
+Porém como precisamos deles na periodicidade semanal nós podemos utilizar um Script SH para escrever condicional e preencher automaticamente os dados da semana. 
+Dessa forma poderiamos utilizar o seguinte Script 
+
+```
+#Definindo onde está o meu arquivo
+folder="/BR-Football-Dataset.csv"
+
+# Define o caminho do diretório no HDFS onde os arquivos serão copiados
+hdfs_dir="/Brazilian_Football/Type/National/Copa_do_Brasil"
+
+nome_arquivo = "Semana_"
+
+n_weeks = 20
+
+# Loop de 1 a 20 para copiar e renomear os arquivos
+for i in $(seq 1 $max_semanas) 
+do
+    # Define o nome do arquivo original
+    dir_hdfs="/Brazilian_Football/Type/National/Copa_do_Brasil/$nome_arquivo$i"
+
+    echo "Inserindo arquivo no diretorio de $dir_hdfs"
+
+    hdfs dfs -put $folder $dir_hdfs
+    
+done
+```
+
+
+
 
 
 
