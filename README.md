@@ -35,6 +35,14 @@ para ver as pastas listadas dentro do diretório
 
 Nós ficaremos os as seguintes pastas 
 
+NACIONAL
+<img src='https://user-images.githubusercontent.com/64543476/235367299-ca5e0c82-30e8-45d2-8e00-2dac3e5ced69.jpeg'></img>
+
+REGIONAL
+<img src='https://user-images.githubusercontent.com/64543476/235367303-9cdf335c-861e-42f3-ba00-78a97eb2a492.jpeg'></img>
+
+
+
 
 
 
