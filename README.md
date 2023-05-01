@@ -93,11 +93,27 @@ dentro do HUE para fácil visualização:
 Agora nós apenas precisamos mudar o caminho final do HDFS para realizar a cópia correta desses arquivos com a nomemclatura certa. 
 
 ## 3 - BackUps 
-Para realizar os BackUps nós decidimos construir as pastas de Backups para cara torneio em cada semanal. 
-Ou seja, o BackUp dos arquivos de CSV será feito de forma semanal junto com a entrega dos dados. Desta forma as pastas estão situadas nos diretório
+Para realizar os Backups, nós decidimos construir as pastas de Backups para cada torneio em cada semana. Ou seja, o backup dos arquivos de CSV será feito de forma semanal junto com a entrega dos dados. Desta forma as pastas estão situadas nos diretórios:
 
-/jogos/Tipo/Torneio/BKP/Semana
+/Jogos/Tipo/Torneio/BKP/Semana
 
+
+* Vamos criar a pasta *BKP* para o armazenamento dos bakups 
+```
+hadoop fs -mkdir /Brazilian_Football/Type/National/BKP
+hadoop fs -mkdir /Brazilian_Football/Type/Regional/BKP
+```
+
+* Agora faremos o backup de forma *semi-automático* seguindo essa estrutura:
+```
+hadoop fs -cp /Jogos/Tipo/Torneio_x/Semana_x /Jogos/Tipo/Torneio_x/BKP/
+```
+
+* Exemplo: 
+```
+hadoop fs -cp /Brazilian_Football/Type/National/Semana_1 /Brazilian_Football/Type/National/BKP/ 
+hadoop fs -cp /Brazilian_Football/Type/Regional/Semana_1  /Brazilian_Football/Type/Regional/BKP/
+```
 
 
 ## 4 - Ecossistema 
