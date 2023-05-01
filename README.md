@@ -91,9 +91,23 @@ dentro do HUE para fácil visualização:
 <img src='https://user-images.githubusercontent.com/64543476/235368233-7e679cfd-9db7-4a8a-b77d-56ae49c07741.png'></img>
 
 Agora nós apenas precisamos mudar o caminho final do HDFS para realizar a cópia correta desses arquivos com a nomemclatura certa. 
-3 - BackUps 
 
-4 - Ecossistema 
+## 3 - BackUps 
+Para realizar os BackUps nós decidimos construir as pastas de Backups para cara torneio em cada semanal. 
+Ou seja, o BackUp dos arquivos de CSV será feito de forma semanal junto com a entrega dos dados. Desta forma as pastas estão situadas nos diretório
+
+/jogos/Tipo/Torneio/BKP/Semana
+
+
+
+## 4 - Ecossistema 
+Como o intuito da atividade é simular um ecossitema real, nós pensamos que um possível ecossistema de dados para essas soluções da seguinte forma: 
+
+<img src='https://user-images.githubusercontent.com/64543476/235394179-ed62597a-3535-4458-b68d-b8f08bf99848.png'></img>
+
+Assim, nós conseguimos nós assegurar da entrega continua dos dados, a construção do BackUp e também a agilidade de esses dados seriam entregues para as áreas de negócios. 
+
+
 
 
 
